@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Artesanato</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Slick Carousel CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+
+    <style>
+        .whatsapp-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            z-index: 9999;
+        }
+
+        .whatsapp-icon img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .slick-prev, .slick-next {
+            color: black;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- Navbar -->
+    <nav class="bg-blue-600 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-white text-2xl font-bold">Artesanato</div>
+            <!-- Menu desktop -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#" class="text-white hover:text-yellow-300">Home</a>
+                <a href="#produtos" class="text-white hover:text-yellow-300">Produtos</a>
+                <a href="#sobre" class="text-white hover:text-yellow-300">Sobre</a>
+                <a href="#localizacao" class="text-white hover:text-yellow-300">Localização</a>
+                <a href="#contato" class="text-white hover:text-yellow-300">Contato</a>
+            </div>
+            <!-- Menu mobile -->
+            <div class="md:hidden flex items-center">
+                <button id="menu-toggle" class="text-white">
+                    <span class="material-icons">menu</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menu mobile (hidden by default) -->
+        <div id="mobile-menu" class="md:hidden bg-blue-600 p-4 hidden">
+            <a href="#" class="block text-white py-2">Home</a>
+            <a href="#produtos" class="block text-white py-2">Produtos</a>
+            <a href="#sobre" class="block text-white py-2">Sobre</a>
+            <a href="#localizacao" class="block text-white py-2">Localização</a>
+            <a href="#contato" class="block text-white py-2">Contato</a>
+        </div>
+    </nav>
+
+    <!-- Produtos Section -->
+    <section id="produtos" class="py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-8">Nossos Produtos</h2>
+
+            <!-- Carrossel de Produtos -->
+            <div class="slick-carousel">
+                <!-- Produto 1 -->
+                <div class="bg-white p-6 shadow-lg rounded-lg">
+                    <img src="assets/Pinceis3.webp" alt="Produto 1" class="w-full h-48 object-cover rounded-md">
+                    <h3 class="text-xl font-semibold mt-4">Produto A</h3>
+                    <p class="text-gray-700 mt-2">Feito à mão com materiais sustentáveis.</p>
+                </div>
+
+                <!-- Produto 2 -->
+                <div class="bg-white p-6 shadow-lg rounded-lg">
+                    <img src="assets/Pinceis.webp" alt="Produto 2" class="w-full h-48 object-cover rounded-md">
+                    <h3 class="text-xl font-semibold mt-4">Produto B</h3>
+                    <p class="text-gray-700 mt-2">Feito à mão com materiais sustentáveis.</p>
+                </div>
+
+                <!-- Produto 3 -->
+                <div class="bg-white p-6 shadow-lg rounded-lg">
+                    <img src="assets/Pinceis3.webp" alt="Produto 3" class="w-full h-48 object-cover rounded-md">
+                    <h3 class="text-xl font-semibold mt-4">Produto C</h3>
+                    <p class="text-gray-700 mt-2">Feito à mão com materiais sustentáveis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Icon -->
+    <div class="whatsapp-icon">
+        <a href="https://wa.me/5511999999999" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('.slick-carousel').slick({
+                dots: true,
+                infinite: true,
+                speed: 300,
+                autoplay: true,          // Ativa o modo automático
+                autoplaySpeed: 3000,     // Tempo entre as transições (em milissegundos)
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                prevArrow: '<button type="button" class="slick-prev">Prev</button>',
+                nextArrow: '<button type="button" class="slick-next">Next</button>',
+            });
+
+            // Menu toggle for mobile
+            $('#menu-toggle').click(function() {
+                $('#mobile-menu').toggleClass('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
